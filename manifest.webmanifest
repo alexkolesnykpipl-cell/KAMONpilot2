@@ -1,0 +1,14 @@
+{
+  "id": "./",
+  "name": "KAMONpilot by KC",
+  "short_name": "KAMONpilot",
+  "description": "KAMONpilot — AI assistant PWA for iPad",
+  "lang": "uk",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#09090d",
+  "theme_color": "#09090d",
+  "icons": [{"src":"./icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

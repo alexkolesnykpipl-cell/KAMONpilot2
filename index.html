@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="uk"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09090d"><meta name="description" content="KAMONpilot by KC — AI assistant PWA for iPad">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
+<title>KAMONpilot ᵇʸKC</title></head>
+<body><div class="app-shell">
+<aside class="sidebar" id="sidebar"><div class="brand"><img src="./icons/icon.svg" class="brand-icon" alt=""><div><strong>KAMONpilot</strong><small>ᵇʸKC</small></div></div>
+<button id="newChat" class="primary-button">＋ Новий чат</button><div class="sidebar-heading">ЧАТИ</div><div id="chatList" class="chat-list"></div>
+<div class="sidebar-bottom"><button id="imageAction" class="side-action">▧ Генерація зображень</button><button id="videoAction" class="side-action">▣ Генерація відео</button><button id="settingsAction" class="side-action">⚙ Налаштування</button></div></aside>
+<main class="main"><header class="topbar"><button id="sidebarToggle" class="icon-button" aria-label="Меню">☰</button><div class="top-title">KAMONpilot <span>ᵇʸKC</span></div><button id="themeCycle" class="icon-button" title="Змінити тему">◐</button></header>
+<section class="conversation" id="conversation" aria-live="polite"><div class="welcome" id="welcome"><img src="./icons/icon.svg" class="welcome-icon" alt=""><h1>Чим допомогти?</h1><p>KAMONpilot — твій помічник. Напиши повідомлення, щоб почати.</p><div class="suggestions"><button data-prompt="Допоможи придумати ідею для проєкту">💡 Ідея для проєкту</button><button data-prompt="Поясни складну тему простими словами">📘 Пояснити тему</button><button data-prompt="Допоможи написати код">⌘ Допомога з кодом</button></div></div><div id="messages" class="messages"></div></section>
+<form id="composer" class="composer"><textarea id="messageInput" rows="1" placeholder="Напиши KAMONpilot…" aria-label="Повідомлення"></textarea><div class="composer-controls"><label class="attach-button" title="Прикріпити файл">＋<input id="fileInput" type="file" hidden></label><span id="attachmentName" class="attachment-name"></span><button id="voiceButton" type="button" class="icon-button" title="Голосове введення">🎙</button><button type="submit" class="send-button" aria-label="Надіслати">➤</button></div></form>
+<div class="disclaimer" id="statusText">Деморежим · Для відповідей ШІ підключи сумісний API в налаштуваннях.</div></main></div>
+<dialog id="settingsDialog"><form method="dialog" class="dialog-header"><h2>Налаштування</h2><button class="icon-button" aria-label="Закрити">✕</button></form>
+<label class="field-label" for="themeSelect">Тема оформлення</label><select id="themeSelect"><option value="deep-black">Deep Black (типова)</option><option value="dark-blue">Dark Blue</option><option value="white">White</option></select><hr>
+<p class="settings-note">Підключення ШІ необов’язкове. Для публічного продукту безпечніше використовувати сервер-посередник, а не зберігати секретний API-ключ у браузері.</p>
+<label class="field-label" for="apiEndpoint">API endpoint</label><input id="apiEndpoint" type="url" placeholder="https://example.com/v1/chat/completions">
+<label class="field-label" for="modelName">Назва моделі</label><input id="modelName" placeholder="model-name">
+<label class="field-label" for="apiKey">API-ключ (зберігається у цьому браузері)</label><input id="apiKey" type="password" autocomplete="off" placeholder="Необов’язково">
+<div class="dialog-actions"><button id="saveSettings" type="button" class="primary-button">Зберегти</button><button id="clearChats" type="button" class="secondary-button">Очистити чати</button></div></dialog>
+<script src="./app.js"></script></body></html>
